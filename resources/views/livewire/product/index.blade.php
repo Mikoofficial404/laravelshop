@@ -1,12 +1,25 @@
 <div class="container">
 
-    @livewire('product.create')
+    @if($formVisible)
+         @if (! $formUpdate)
+         @livewire('product.create')
+         @else
+         @livewire('product.update')
+         @endif
+    @endif
 
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Product') }}</div>
+                <div class="card-header">{{ __('Product') }}
+                    <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
+                </div>
                 <div class="card-body">
+                    @if (session()->has('message'))
+                        <div class="alert alert-success">
+                            {{session('message')}}
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col">
                             <select wire:model="paginate" name="" id="" class="form-control form-control-sm w-auto">

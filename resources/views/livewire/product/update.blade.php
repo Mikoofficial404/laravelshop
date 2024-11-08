@@ -3,7 +3,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form wire:submit.prevent="store" method="POST" enctype="multipart/form-data">
+                    <form wire:submit.prevent="update" method="POST" enctype="multipart/form-data">
 
                         <div class="form-group">
 
@@ -58,6 +58,8 @@
                                         @enderror
                                         @if ($image)
                                             <img src="{{$image->temporaryUrl()}}" alt="" height="200">
+                                            @else
+                                            <img src="{{$imageOld}}" alt="" height="200">
                                         @endif
                                     </div>
                                 </div>
