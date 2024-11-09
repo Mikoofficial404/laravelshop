@@ -8,7 +8,7 @@ class Cart
 {
     public function __construct()
     {
-        if ($this->get() === null) {
+        if ($this->get() === null ) {
             $this->set($this->empty());
         }
     }
@@ -25,23 +25,32 @@ class Cart
 
     public function empty()
     {
-        return ['products' => []];
+        return [
+            'products' => []
+        ];
     }
 
     public function add(Product $product)
     {
         $cart = $this->get();
-        $cart['products'][] = $product; // Add the product to the cart
+        array_push($cart['products'], $product);
         $this->set($cart);
     }
 
     public function remove($productId)
     {
         $cart = $this->get();
-        // Remove the product from the cart
-        $cart['products'] = array_filter($cart['products'], function($item) use ($productId) {
-            return $item->id !== $productId;
-        });
+        array_splice(
+            $cart['products'],
+            array_search(
+                $productId,
+                array_column(
+                    $cart['products'],
+                    'id'
+                )
+            ),
+            1
+        );
         $this->set($cart);
     }
 

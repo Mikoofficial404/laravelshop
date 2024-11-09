@@ -29,7 +29,9 @@ class Index extends Component
     }
 
     public function addToCart($productId){
-         $product = Product::find($productId);
+        $product = Product::find($productId);
         Cart::add($product);
+        $this->emit('addToCart');
+        // dd($product);
     }
 }

@@ -15,7 +15,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "livewire/livewire": "1.3.9"
+        "livewire/livewire": "1.3.9",
+        "midtrans/midtrans-php": "^2.6"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

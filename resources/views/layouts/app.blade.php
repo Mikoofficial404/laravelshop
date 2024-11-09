@@ -37,6 +37,7 @@
                         <li class="nav-item">
                             <a href="{{route('shop.index')}}" class="nav-link">Shop</a>
                         </li>
+                        @livewire('shop.cartnav')
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -80,6 +81,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{config('services.midtrans.clientKey')}}"></script>
     @livewireScripts
 </body>
 </html>
