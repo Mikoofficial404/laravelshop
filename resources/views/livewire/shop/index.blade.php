@@ -25,12 +25,9 @@
                         <p class="card-text text-center" style="font-size: 0.9em;">
                             {{ Str::limit($product->description, 100) }}
                         </p>
-                        <button
-                            wire:click="addToCart({{ $product->id }})"
-                            type="button"
-                            class="btn btn-sm btn-outline-light btn-block">
-                            Add to Cart
-                        </button>
+                        <button wire:click="addToCart({{ $product->id }})" type="button" class="btn btn-sm btn-outline-light btn-block">
+    Add to Cart
+</button>
                     </div>
                 </div>
             </div>

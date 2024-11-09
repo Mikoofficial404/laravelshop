@@ -14,7 +14,7 @@ class Index extends Component
     public $paginate = 10;
     public $search;
     public $formVisible;
-    public $formUpdate = "false";
+    public $formUpdate = false;
 
     protected $updatesQueryString = ["search" => ["except"=> ""]];
 
